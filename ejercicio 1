@@ -29,7 +29,7 @@ robots
   comenzar
     esquinaSin:=0
     flores:=0
-    repetir 9
+    repetir 99
       si (~HayFlorEnLaEsquina)
         esquinaSin:= esquinaSin+1
       sino
