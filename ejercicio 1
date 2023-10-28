@@ -1,0 +1,49 @@
+Realice un programa para que un robot junte todas las flores de la avenida 1 y las deposite al final
+de dicha avenida. Al finalizar, debe informar la cantidad de flores depositadas y la cantidad de
+esquinas sin flores que encontró durante el recorrido
+
+programa ejercicio1
+
+procesos
+  proceso juntarFlores ( ES flores: numero)
+  comenzar
+    mientras HayFlorEnLaEsquina 
+      tomarFlor
+      flores:= flores+1
+  fin
+  
+  proceso depositarFlores (E flores: numero)
+  comenzar
+    mientras HayFlorEnLaBolsa
+      depositarFlor
+  fin
+  
+areas
+  ciudad: AreaC (1,1,100,100)
+  
+robots
+  robot tipo1
+  variables
+    flores: numero
+    esquinaSin: numero
+  comenzar
+    esquinaSin:=0
+    flores:=0
+    repetir 9
+      si (~HayFlorEnLaEsquina)
+        esquinaSin:= esquinaSin+1
+      sino
+        juntarFlores (flores)
+      mover
+    depositarFlores (flores)
+    Informar (flores)
+    Informar (esquinaSin)   
+  fin
+   
+variables
+  robot1: tipo1
+comenzar
+  AsignarArea (robot1, ciudad)
+  Iniciar (robot1, 1,1) 
+fin
+
