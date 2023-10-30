@@ -53,3 +53,6 @@ comenzar
   AsignarArea (robot4, area4)
   Iniciar (robot4, 19,10)
 fin   
+
+
+use 4 areas privadas para que cada robot solo se pudiera mover en su area asi no existe riesgo de colision, no se si ese era el objetivo del ejercicio o se hace de manera diferente.
