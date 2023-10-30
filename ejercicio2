@@ -15,7 +15,7 @@ areas
   area1: AreaP (10,10, 10,19)  
   area2: AreaP (10,20, 19 ,20)
   area3: AreaP (19,19,19,11)
-  area4: AreaP (19,10,11,10)
+  area4: AreaP (19,10,11,10) {me tira error en esta linea}
 robots
   robot tipo1
   comenzar
