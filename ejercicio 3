@@ -1,3 +1,5 @@
+
+
 programa ejercicio3
 procesos 
   proceso juntarFlores (ES flores: numero)
@@ -35,19 +37,19 @@ procesos
     si (papeles - flores = 1)
       contador:= contador+1
   fin
-  proceso escalon (E alto: numero; E ancho: numero ES contador: numero)
+  proceso escalon (E medida: numero ES contador: numero)
   variables
     flores: numero
     papeles: numero
   comenzar
     flores:= 0
     papeles:= 0
-    repetir alto
+    repetir medida
       juntarJuntos (flores, papeles)
       depositarJuntos (flores, papeles)
       mover
     derecha
-    repetir ancho
+    repetir medida
       mover
       juntarJuntos (flores, papeles)
       depositarJuntos (flores, papeles)
@@ -57,13 +59,13 @@ procesos
   fin
   proceso escalera (E escalones: numero)
   variables
-    alto, ancho, contador: numero
+    medida, contador: numero
   comenzar
-    alto:= 4
-    ancho:= 4
+    medida:=0
     repetir escalones
       contador:=0
-      escalon (alto, ancho, contador) 
+      medida:= medida+2
+      escalon (medida, contador) 
     Informar (contador)
   fin  
 areas
