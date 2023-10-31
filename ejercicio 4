@@ -1,0 +1,33 @@
+programa ejercicio4
+procesos
+  proceso juntarFlores
+  comenzar
+    mientras HayFlorEnLaEsquina
+      tomarFlor
+  fin
+  proceso juntarPapeles 
+  comenzar
+    mientras HayPapelEnLaEsquina
+      tomarPapel
+  fin
+areas
+  area1: AreaP (1,1, 25,100)
+  area2: AreaP (26,1, 50, 100)
+  area3: AreaP (51,1, 75,100)
+  area4: AreaP (76,1, 100,100)
+robots
+  robot tipo1
+  comenzar
+    repetir 24
+      repetir 99
+        juntarFlores
+        juntarPapeles
+        mover
+      Pos (PosAv+1,1)
+  fin
+variables
+  robot1: tipo1
+comenzar
+  AsignarArea (robot1, area1)
+  Iniciar (robot1, 1,1)
+fin
