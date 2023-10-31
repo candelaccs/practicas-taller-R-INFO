@@ -1,0 +1,101 @@
+por que en algunos casos tengo que restar y en otros no? // ej: robot2 y robot3
+
+programa ejercicio5
+procesos
+  proceso juntarFlores (ES flores: numero)
+  comenzar
+    mientras HayFlorEnLaEsquina
+      tomarFlor
+      flores:= flores+1
+  fin
+  proceso depositarFlores (E flores: numero)
+  comenzar
+    repetir flores
+      depositarFlor
+  fin
+  proceso juntarPapeles (ES papeles: numero)
+  comenzar
+    mientras HayPapelEnLaEsquina
+      tomarPapel
+      papeles:= papeles+1
+  fin
+  proceso depositarPapeles (E papeles: numero)
+  comenzar
+    repetir papeles
+      depositarPapel
+  fin
+  proceso recorrerFlor (E esquinas: numero)
+  variables
+    flores: numero
+  comenzar
+    flores:= 0
+    repetir esquinas
+      juntarFlores (flores)
+      mover
+    depositarFlores (flores)
+  fin
+  proceso recorrerPapel (E esquinas: numero)
+  variables
+    papeles: numero
+  comenzar
+    papeles:= 0
+    repetir esquinas
+      juntarPapeles (papeles)
+      mover
+    depositarPapeles (papeles)
+  fin
+areas
+  area1: AreaP (1,75,15,75)
+  area2: AreaP (1,80,15,80)
+  area3: AreaP (75,80,75,100)
+  area4: AreaP (80,80,80,100)
+  area5: AreaP (70,10,100,10)
+  area6: AreaP (70,15,100,15)
+  area7: AreaP (10,1,10,10)
+  area8: AreaP (15,1,15,10)
+robots
+  robot tipo1
+  comenzar
+    derecha
+    recorrerFlor (14)
+    Pos (1,80)
+    recorrerFlor (14)
+  fin
+  robot tipo2
+  comenzar
+    recorrerPapel (20)
+    Pos (80,80)
+    recorrerPapel (20)
+  fin
+  robot tipo3
+  comenzar
+    derecha
+    recorrerFlor (30)
+    Pos (70,15)
+    recorrerFlor (30)
+  fin
+  robot tipo4
+  comenzar
+    recorrerPapel (9)
+    Pos (15,1)
+    recorrerPapel (9)
+  fin
+variables
+  robot1: tipo1
+  robot2: tipo2
+  robot3: tipo3
+  robot4: tipo4
+comenzar
+  AsignarArea (robot1, area1)
+  AsignarArea (robot1, area2)
+  AsignarArea (robot2, area3)
+  AsignarArea (robot2, area4)
+  AsignarArea (robot3, area5)
+  AsignarArea (robot3, area6)
+  AsignarArea (robot4, area7)
+  AsignarArea (robot4, area8)
+  Iniciar (robot1, 1,75)
+  Iniciar (robot2, 75,80)
+  Iniciar (robot3, 70,10)
+  Iniciar (robot4, 10,1)
+fin
